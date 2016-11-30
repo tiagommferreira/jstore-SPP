@@ -56,12 +56,11 @@ public class Order {
     public String generateReceipt(String currencyType) throws IOException {
         String temp = "";
 
-        temp += this.costumerName + "\n";
-        temp += this.watch.getBrand() + "\n";
-        temp += this.watch.getModel() + "\n";
-        temp += this.watch.getPrice(currencyType) + "\n";
-        temp += this.amount + "\n";
-        temp += "\nTotal Price: " + this.watch.getPrice(currencyType) * this.amount;
+        temp += "Costumer: " + this.costumerName + "\n";
+        temp += "Brand: " + this.watch.getBrand() + "\n";
+        temp += "Model: " + this.watch.getModel() + "\n";
+        temp += "Price: " + this.watch.getPrice(currencyType) + "\n";
+        temp += "Quantity: " + this.amount + "\n";
 
         return temp;
     }
