@@ -25,8 +25,8 @@ public class Watch {
         this.model = model;
     }
 
-    public void getBrand(int currencyType) {
-        return;
+    public int getPrice(int currencyType) {
+        return 1;
     }
 
     public void decrement() {
