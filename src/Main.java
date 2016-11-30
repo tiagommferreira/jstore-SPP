@@ -21,8 +21,13 @@ public class Main {
         catalog.add(new Watch("B","PIM",1,10001,orig));
         catalog.add(new Watch("SW3445","Swatch",30,10,orig));
 
-        printListByBrand();
+        currency = UserInterface.selectCurrency();
 
+        Main.printListByBrand();
+
+        Order order = UserInterface.placeOrder(catalog);
+
+        System.out.print(order.generateReceipt(currency));
 
     }
 

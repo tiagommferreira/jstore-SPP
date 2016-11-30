@@ -1,3 +1,5 @@
+import java.io.IOException;
+
 public class Order {
     private Watch watch;
     private String costumerName;
@@ -7,6 +9,12 @@ public class Order {
 
     public Order() {
 
+    }
+    public Order(String costumerName, String address, String email, Watch watch) {
+        this.costumerName = costumerName;
+        this.address = address;
+        this.email = email;
+        this.watch = watch;
     }
 
     public Watch getWatch() {
@@ -45,7 +53,7 @@ public class Order {
         return amount;
     }
 
-    public String generateReceipt(int currencyType) {
+    public String generateReceipt(String currencyType) throws IOException {
         String temp = "";
 
         temp += this.costumerName + "\n";
