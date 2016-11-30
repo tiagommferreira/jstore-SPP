@@ -1,14 +1,20 @@
+import models.Currency;
+
+import java.io.IOException;
+
 public class Watch {
     private String model;
     private String brand;
     private int amount;
-    //TODO
-    //private float price;
+    private Currency original;
+    private float price;
 
-    public Watch(String model, String brand, int amount) {
+    public Watch(String model, String brand, int amount,float price, Currency original) {
         this.model = model;
         this.brand = brand;
         this.amount = amount;
+        this.price= price;
+        this.original = original;
 
     }
 
@@ -28,8 +34,10 @@ public class Watch {
         this.model = model;
     }
 
-    public int getPrice(int currencyType) {
-        return 1;
+    public float getPrice(String currencyType) throws IOException {
+
+        Currency convert = new Currency(currencyType,currencyType);
+        return original.convertTo(price,convert);
     }
 
     public void decrement() {
