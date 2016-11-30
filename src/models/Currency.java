@@ -21,12 +21,20 @@ public class Currency {
         this.type = type;
     }
 
-    public float convertTo(String toCurrency) throws IOException {
+    public float getRate(String toCurrency) throws IOException {
         YahooCurrencyConverter ycc = new YahooCurrencyConverter();
         return ycc.convert(this.type, toCurrency);
     }
-    public float convertTo(Currency currency) throws IOException {
+    public float getRate(Currency currency) throws IOException {
         YahooCurrencyConverter ycc = new YahooCurrencyConverter();
         return ycc.convert(this.type, currency.type);
     }
+
+    public float convertTo(float value, Currency currency) throws IOException {
+        YahooCurrencyConverter ycc = new YahooCurrencyConverter();
+        float rate = ycc.convert(this.type, currency.type);
+
+        return value * rate;
+    }
+
 }

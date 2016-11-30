@@ -28,11 +28,16 @@ public class Main {
 
         try {
             // Com o object currency
-            float rateObject = exampleCurrency.convertTo(exampleCurrency1);
+            float rateObject = exampleCurrency.getRate(exampleCurrency1);
             // Com o codigo da currency
-            float rateCode = exampleCurrency.convertTo(exampleCurrency1.type);
+            float rateCode = exampleCurrency.getRate(exampleCurrency1.type);
+
+            System.out.println("Rates " + exampleCurrency.name + " -> " + exampleCurrency1.name);
             System.out.println(rateObject);
             System.out.println(rateCode);
+
+            System.out.println("Conversion " + exampleCurrency.name + " -> " + exampleCurrency1.name);
+            System.out.println("Euro: 10.2f\nDollar: " + exampleCurrency.convertTo(10.2f, exampleCurrency1));
         }
         catch (Exception e) {
             e.printStackTrace();
