@@ -5,7 +5,10 @@ public class Watch {
     //TODO
     //private float price;
 
-    public Watch() {
+    public Watch(String model, String brand, int amount) {
+        this.model = model;
+        this.brand = brand;
+        this.amount = amount;
 
     }
 
